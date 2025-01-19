@@ -1,0 +1,130 @@
+.main{
+    position: relative;
+    height: 100vh;
+    padding-top: 130px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.main-info-container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.burger{
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.burger-image{
+    object-fit: cover;
+    height: 100%;
+    width: 600px;
+    border-radius: 20px;
+    border: 1px solid rgb(238, 229, 229);
+}
+
+.info{
+    height: 50%;
+    font-size: xx-large;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(230, 37, 37);
+    color: #f0f0f0;
+    font-size: large;
+    cursor: pointer;
+    transition: color 0.3s ease-in , box-shadow 0.3s ease-in-out ;
+    border: 1px solid ;
+}
+
+.button:hover{
+    box-shadow: 0 4px 8px rgba(241, 237, 237, 0.2);
+    color: rgb(17, 17, 17);
+}
+
+.bg-image{
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.boss{
+    color: rgb(230, 37, 37);
+}
+
+.arrow{
+    width: 20px;
+    height: 20px;
+}
+
+@media(max-width: 960px){
+    .main-info-container{
+        width: 100%;
+        padding-top: 25px;
+        justify-content: center;
+        align-items: center;
+    }
+    .info{
+        height: 45%;
+    }
+    .burger{
+        display: none;
+    }
+    .button{
+        z-index: 2;
+    }
+
+    .bg-image{
+        display: block;
+        width: 100%;
+    }
+}
+
