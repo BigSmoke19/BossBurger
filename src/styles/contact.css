@@ -86,6 +86,14 @@
     font-size: x-large;
 }
 
+.dev-container{
+    background-color: rgb(230, 37, 37);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
 @media(max-width: 960px){
     .contact-info{
         flex-direction: column;
@@ -93,10 +101,17 @@
         align-items: center;
         gap: 10px;
         width: 100%;
+
     }
 
     .location,.social,.number{
         width: 80%;
+    }
+}
+
+@media(max-width: 400px){
+    .contact-info{
+        margin-top: 50px;
     }
 }
 

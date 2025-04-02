@@ -1,0 +1,45 @@
+.ing-container{
+    position: absolute;
+    background-color: #f0f0f0;
+    color: rgb(10, 10, 10);
+    height: max-content;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: rgb(230,37,37);
+    z-index: 5;
+}
+
+.close-btn,.save-btn{
+    
+    border: none;
+    cursor: pointer;
+    
+}
+
+.close-btn{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.save-btn{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.ing-title{
+    padding-left: 5px;
+}
+
+.ings{
+    padding-left: 5px;
+}
+
+.notes{
+    border: 1px solid;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    min-height: 50px;
+}

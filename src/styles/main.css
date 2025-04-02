@@ -40,14 +40,9 @@
 }
 
 .info{
-    height: 50%;
+    height: max-content;
     font-size: xx-large;
-    padding-left: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 10px;
+    text-align: center;
 }
 
 .buttons{
@@ -75,6 +70,7 @@
     cursor: pointer;
     transition: color 0.3s ease-in , box-shadow 0.3s ease-in-out ;
     border: 1px solid ;
+    margin-top: 20px;
 }
 
 .button:hover{
@@ -98,6 +94,7 @@
 
 .boss{
     color: rgb(230, 37, 37);
+    
 }
 
 .arrow{
@@ -108,23 +105,43 @@
 @media(max-width: 960px){
     .main-info-container{
         width: 100%;
-        padding-top: 25px;
         justify-content: center;
         align-items: center;
     }
     .info{
-        height: 45%;
+        height: max-content;
+        text-align: center;
     }
     .burger{
         display: none;
     }
     .button{
         z-index: 2;
+        margin-top: 10px;
     }
 
     .bg-image{
         display: block;
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media(max-width: 480px){
+    .main-info-container{
+        margin-top: 75px;
+    }
+}
+
+@media(max-width: 400px){
+    .info{
+
+        font-size: 20px;
+        height: max-content;
+    }
+    .button{
+        margin-top: 20px;
     }
 }
 

@@ -9,9 +9,10 @@ import Order from './order';
 const Home = () => {
 
   const [cartScroll,setCartScroll] = useState(false);
+  const [arabic,setArabic] = useState(false);
   
   window.addEventListener('beforeunload', () => {
-    localStorage.clear();
+    localStorage.removeItem('order');
   });
   
 
@@ -54,7 +55,7 @@ const Home = () => {
 };
 
 // Mouse wheel event listener
-window.addEventListener('wheel', (event) => {
+window.addEventListener("wheel", (event) => {
   //event.preventDefault(); // Prevent the default scroll behavior
   window.scrollBy(0, event.deltaY); // Adjust the scroll position manually
   handleScroll(); // Call the handleScroll function
@@ -78,10 +79,18 @@ window.addEventListener('touchmove', (event) => {
 
 //console.log("event attached");
 
-/*return ()=>{
-  window.removeEventListener("scroll",handleScroll);
-  console.log("event removed");
-}*/
+//window.addEventListener('scroll', handleScroll);
+
+//console.log("event attached");
+
+return () => {
+    window.removeEventListener('wheel', handleScroll);
+    window.removeEventListener('touchstart', handleScroll);
+    window.removeEventListener('touchmove', handleScroll);
+    window.removeEventListener('scroll', handleScroll);
+    console.log("event removed");
+};
+
 
   }, []);
 
@@ -92,10 +101,10 @@ window.addEventListener('touchmove', (event) => {
   return (
     <div className="home" id='home'>
       <Navbar handleCart={handleCart}/>
-      <Order scroll={cartScroll} handleCart={handleCart}/>
-      <Main />
-      <Menu />
-      <Contact />
+      <Order arabic={arabic} setArabic={setArabic} scroll={cartScroll} handleCart={handleCart}/>
+      <Main arabic={arabic} setArabic={setArabic} />
+      <Menu arabic={arabic} setArabic={setArabic} />
+      <Contact arabic={arabic} setArabic={setArabic} />
     </div>
   );
 };

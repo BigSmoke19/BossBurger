@@ -39,13 +39,14 @@
 }
 
 .item-data{
-    height: 100%;
+    position: relative;
+    height: max-content;
     margin: 0;
     padding-left: 15px;
+    max-width: 100%;
 }
 
 #category{
-    height: 17.5%;
     width: 25%;
     text-align: center;
     display: flex;
@@ -61,22 +62,37 @@
 }
 
 #name{
-    height: 27.5%;
+  position: relative;
     font-size: x-large;
     font-weight: 700;
     display: flex;
     align-items: center;
+    margin: 0;
+    gap: 5px;
 }
 
 #description{
-    height: 35%;
+    width: 90%;
     color: rgba(255, 255, 255, 0.678);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    overflow-wrap: break-word; /* Allow breaking long words */
+    word-wrap: break-word;     /* Ensures long words can wrap */
+    word-break: break-word;
+    overflow-y: scroll;   
+}
+
+#description::-webkit-scrollbar {
+  width: 5px;
+}
+
+#description::-webkit-scrollbar-thumb {
+  background: #f0f0f0;
+  border-radius: 3px;
 }
 
 #price{
-    height: 100%;
     color: rgb(30, 226, 79);
     font-size: large;
     display: flex;
@@ -89,7 +105,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 20%;
 }
 
 .categories{
@@ -127,7 +142,21 @@
     cursor: pointer;
 }
 
+.adds{
+  font-size: small;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  color: rgb(230, 37, 37);
+  cursor: pointer;
+}
 
+.subItems{
+  display: flex;
+  flex-direction: row;
+  flex : 1 1 45%;
+}
 
 
 
@@ -208,4 +237,12 @@
   
   input:checked ~ .slider {
     background-color: #9ed99c;
+  }
+
+
+  @media(max-width: 960px){
+    .items-container{
+      grid-template-columns: repeat(auto-fit, 350px);
+ 
+  }  
   }
